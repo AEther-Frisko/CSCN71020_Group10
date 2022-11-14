@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "main.h"
 #include "triangleSolver.h"
@@ -19,7 +20,6 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			break;
@@ -49,8 +49,16 @@ int printShapeMenu() {
 	int shapeChoice;
 
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
-
+	switch (scanf("%d", &shapeChoice)) {
+	case 1:
+		break;
+	case 0:
+		printf("ERROR - input not an integer\n");
+		exit(EXIT_FAILURE);
+	default:
+		printf("ERROR - input validation failure\n");
+		exit(EXIT_FAILURE);
+	}
 	return shapeChoice;
 }
 
