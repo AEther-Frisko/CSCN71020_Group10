@@ -6,7 +6,7 @@
 #include "triangleSolver.h"
 
 int side = 0;
-
+int rows, cols, i, j;
 int main() {
 	bool continueProgram = true;
 	while (continueProgram) {
@@ -23,6 +23,18 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			break;
+		case 2:
+			printf("Enter rows and columns of rectangle\n");
+			scanf_s("%d %d", &rows, &cols);
+			/* Row iterator for loop */
+			for (i = 0; i < rows; i++) {
+				/* Column iterator for loop */
+				for (j = 0; j < cols; j++) {
+					printf("*");
+				}
+				printf("\n");
+			}
+			
 		case 0:
 			continueProgram = false;
 			break;
@@ -43,6 +55,7 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
+	printf_s("2. rectangle\n");
 	printf_s("1. Triangle\n");
 	printf_s("0. Exit\n");
 

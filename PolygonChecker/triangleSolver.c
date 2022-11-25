@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
-
 #include "triangleSolver.h"
 
 char* analyzeTriangle(int side1, int side2, int side3) {
