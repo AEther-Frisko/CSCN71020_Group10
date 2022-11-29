@@ -4,6 +4,7 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "rectangleSolver.h"
 
 int side = 0;
 int rows, cols, i, j;
@@ -24,16 +25,11 @@ int main() {
 			printf_s("%s\n", result);
 			break;
 		case 2:
-			printf("Enter rows and columns of rectangle\n");
-			scanf_s("%d %d", &rows, &cols);
-			/* Row iterator for loop */
-			for (i = 0; i < rows; i++) {
-				/* Column iterator for loop */
-				for (j = 0; j < cols; j++) {
-					printf("*");
-				}
-				printf("\n");
-			}
+			printf_s("Rectangle selected.\n");
+			int rectPoints[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+			int* rectPointsPtr = getRectanglePoints(rectPoints);
+			result = analyzeRect(rectPointsPtr);
+			printf_s("%s\n", result);
 			
 		case 0:
 			continueProgram = false;
@@ -55,8 +51,8 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
-	printf_s("2. rectangle\n");
 	printf_s("1. Triangle\n");
+	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
@@ -68,6 +64,8 @@ int printShapeMenu() {
 	case 0:
 		printf("ERROR - input not an integer\n");
 		exit(EXIT_FAILURE);
+	case 2:
+		break;
 	default:
 		printf("ERROR - input validation failure\n");
 		exit(EXIT_FAILURE);
@@ -82,4 +80,12 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+int* getRectanglePoints(int* rectPoints) {
+	printf_s("Enter the four points of the rectangle (each input should be the x and y of the point, seperated by a space): ");
+	for (int i = 0; i < 8; i = i + 2) {
+		scanf_s("%d %d", &rectPoints[i], &rectPoints[i + 1]);
+	}
+	return rectPoints;
 }
