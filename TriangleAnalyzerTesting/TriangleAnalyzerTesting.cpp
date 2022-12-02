@@ -125,5 +125,19 @@ namespace TriangleAnalyzerTesting
 			Result = GetTriangleAngles(7, 9, 8);
 			Assert::AreEqual(48.189685, Result);
 		}
+		TEST_METHOD(Triangleangletesting7)
+		{
+			// Testing the angles of the triangle 
+			double Result = 0;
+			Result = GetTriangleAngles(7, 7, 7);
+			Assert::AreEqual(60.000000, Result);
+		}
+		TEST_METHOD(Triangleangletesting8)
+		{
+			// Testing the angles of the triangle 
+			double Result = 0;
+			Result = GetTriangleAngles(9, 9, 9);
+			Assert::AreEqual(60.000000, Result);
+		}
 	};
 }
