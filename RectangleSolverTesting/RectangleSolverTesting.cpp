@@ -26,39 +26,31 @@ namespace RectangleSolverTesting
 		}
 		TEST_METHOD(IncorrectPointsTest2)
 		{
-			//Second test, all points consisting of invalid inputs
-			char* Result = "";
-			int points[8] = { -1, 0.5, -22, 2.6, -3.5, 0, 0, 7.1 };
-			Result = analyzeRect(points);
-			Assert::AreEqual("Input is not a rectangle.", Result);
-		}
-		TEST_METHOD(IncorrectPointsTest3)
-		{
-			//Third test,  All points but 4th create a proper rectangle
+			//Second test,  All points but 4th create a proper rectangle
 			char* Result = "";
 			int points[8] = { 1, 1, 4, 1, 4, 3, 2, 3 };
 			Result = analyzeRect(points);
 			Assert::AreEqual("Input is not a rectangle.", Result);
 		}
-		TEST_METHOD(IncorrectPointsTest4)
+		TEST_METHOD(IncorrectPointsTest3)
 		{
-			//Third test,  All points but 3rd create a proper rectangle
+			//Third,  All points but 3rd create a proper rectangle
 			char* Result = "";
 			int points[8] = { 20, 5, 25, 5, 25, 14, 20, 13 };
 			Result = analyzeRect(points);
 			Assert::AreEqual("Input is not a rectangle.", Result);
 		}
-		TEST_METHOD(IncorrectPointsTest5)
+		TEST_METHOD(IncorrectPointsTest4)
 		{
-			//Third test,  All points but 2nd create a proper rectangle
+			//Fourth test,  All points but 2nd create a proper rectangle
 			char* Result = "";
 			int points[8] = { 5, 5, 20, 6, 10, 11, 5, 11 };
 			Result = analyzeRect(points);
 			Assert::AreEqual("Input is not a rectangle.", Result);
 		}
-		TEST_METHOD(IncorrectPointsTest6)
+		TEST_METHOD(IncorrectPointsTest5)
 		{
-			//Third test,  All points but 1st create a proper rectangle
+			//Fifth test,  All points but 1st create a proper rectangle
 			char* Result = "";
 			int points[8] = { 1, -1, 3, 1, 3, 4, 3, 1 };
 			Result = analyzeRect(points);

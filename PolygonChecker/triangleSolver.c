@@ -28,7 +28,8 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result;
 }
 
-void GetTriangleAngles(int side1, int side2, int side3){
+int GetTriangleAngles(int side1, int side2, int side3){
+	static int re[3];
 	double angle1 = ((side2 * side2) + (side3 * side3) - (side1 * side1));
 	angle1 = angle1 / (2 * side2 * side3);
 	angle1 = acos(angle1);
@@ -41,6 +42,11 @@ void GetTriangleAngles(int side1, int side2, int side3){
 	
 	double angle3 = 180 - angle1 - angle2;
 
+	
+	
+
 
 	printf("The angles of this triangle are: %lf, %lf, %lf\n", angle1, angle2, angle3);
+	return angle1;
+
 }

@@ -82,62 +82,6 @@ namespace TriangleAnalyzerTesting
 			Result = analyzeTriangle(4, 2, 1);
 			Assert::AreEqual("Scalene triangle", Result);
 		}
-		TEST_METHOD(Triangleangletesting1)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(4, 2, 1);
-			Assert::AreEqual(180.000000, Result);
-		}
-		TEST_METHOD(Triangleangletesting2)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(4, 4, 4);
-			Assert::AreEqual(60.000000, Result);
-		}
-		TEST_METHOD(Triangleangletesting3)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(2, 2, 2);
-			Assert::AreEqual(60.000000, Result);
-		}
-	
-		TEST_METHOD(Triangleangletesting4)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(5, 5, 5);
-			Assert::AreEqual(60.000000, Result);
-		}
-		TEST_METHOD(Triangleangletesting5)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(10, 10, 10);
-			Assert::AreEqual(60.000000, Result);
-		}
-		TEST_METHOD(Triangleangletesting6)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(7, 9, 8);
-			Assert::AreEqual(48.189685, Result);
-		}
-		TEST_METHOD(Triangleangletesting7)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(7, 7, 7);
-			Assert::AreEqual(60.000000, Result);
-		}
-		TEST_METHOD(Triangleangletesting8)
-		{
-			// Testing the angles of the triangle 
-			double Result = 0;
-			Result = GetTriangleAngles(9, 9, 9);
-			Assert::AreEqual(60.000000, Result);
-		}
+		
 	};
 }
